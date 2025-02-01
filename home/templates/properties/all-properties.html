@@ -1,0 +1,285 @@
+{% extends 'properties/base.html' %}
+
+{% block title %}all Properties{% endblock %}
+
+{% block content %}
+
+<div class="flat-tab flat-tab-form">
+    <div class="tab-content">
+        <div class="tab-pane fade active show" role="tabpanel">
+            <div class="form-sl">
+                <form method="GET" action="{% url 'all_properties' %}">
+                    <div class="wd-find-select">
+                        <div class="inner-group">
+                            <!-- Property Type Dropdown -->
+                            <div class="form-group-1 search-form form-style">
+                                <label>Type</label>
+                                <div class="group-select">
+                                    <select class="form-control" name="type">
+                                        <option value="all" selected>All</option>
+                                        <option value="building_to_sell">Building</option>
+                                        <option value="land_to_sell">Land</option>
+                                    </select>
+                                </div>
+                            </div>
+                
+                            <!-- Location Input -->
+                            <div class="form-group-2 form-style">
+                                <label>Location</label>
+                                <div class="group-ip">
+                                    <input type="text" class="form-control" placeholder="Search Location" name="address" >
+                                    <a href="#" class="icon icon-location"></a>
+                                </div>
+                            </div>
+                
+                            <!-- Keyword Input -->
+                            <div class="form-group-3 form-style">
+                                <label>Keyword</label>
+                                <input type="text" class="form-control" placeholder="Search Keyword" name="keyword" >  
+                            </div>  
+                        </div>
+                
+                        <!-- Advanced Search Button -->
+                        <div class="box-btn-advanced">
+                            <div class="form-group-4 box-filter">
+                                <a class="tf-btn btn-line filter-advanced pull-right">
+                                    <span class="text-1">Search advanced</span>
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 12.375V3.4375M5.5 12.375C5.86467 12.375 6.21441 12.5199 6.47227 12.7777C6.73013 13.0356 6.875 13.3853 6.875 13.75C6.875 14.1147 6.73013 14.4644 6.47227 14.7223C6.21441 14.9801 5.86467 15.125 5.5 15.125M5.5 12.375C5.13533 12.375 4.78559 12.5199 4.52773 12.7777C4.26987 13.0356 4.125 13.3853 4.125 13.75C4.125 14.1147 4.26987 14.4644 4.52773 14.7223C4.78559 14.9801 5.13533 15.125 5.5 15.125M5.5 15.125V18.5625M16.5 12.375V3.4375M16.5 12.375C16.8647 12.375 17.2144 12.5199 17.4723 12.7777C17.7301 13.0356 17.875 13.3853 17.875 13.75C17.875 14.1147 17.7301 14.4644 17.4723 14.7223C17.2144 14.9801 16.8647 15.125 16.5 15.125M16.5 12.375C16.1353 12.375 15.7856 12.5199 15.5277 12.7777C15.2699 13.0356 15.125 13.3853 15.125 13.75C15.125 14.1147 15.2699 14.4644 15.5277 14.7223C15.7856 14.9801 16.1353 15.125 16.5 15.125M16.5 15.125V18.5625M11 6.875V3.4375M11 6.875C11.3647 6.875 11.7144 7.01987 11.9723 7.27773C12.2301 7.53559 12.375 7.88533 12.375 8.25C12.375 8.61467 12.2301 8.96441 11.9723 9.22227C11.7144 9.48013 11.3647 9.625 11 9.625M11 6.875C10.6353 6.875 10.2856 7.01987 10.0277 7.27773C9.76987 7.53559 9.625 7.88533 9.625 8.25C9.625 8.61467 9.76987 8.96441 10.0277 9.22227C10.2856 9.48013 10.6353 9.625 11 9.625M11 9.625V18.5625" stroke="#161E2D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                                                          
+                                </a>
+                            </div>
+                            <button type="submit" class="tf-btn btn-search primary">Search <i class="icon icon-search"></i></button>
+                        </div>
+                    </div>
+                
+                    <!-- Price Slider -->
+
+                
+                    <div class="wd-search-form"> 
+                        <div class="grid-2 group-box group-price">
+                            <div class="widget-price">
+                                <div class="box-title-price">
+                                    <span class="title-price fw-6">Price:</span>
+                                    <div class="caption-price">
+                                        <input type="number" class="form-control" placeholder="Enter Price" name="price" >   
+                                    </div>
+                                </div>                                              
+                            </div>
+                        </div>
+                
+                        <!-- Size Slider -->
+                        <div class="widget-price">
+                            <div class="box-title-price">
+                                <span class="title-price fw-6">Size:</span>
+                                <div class="caption-price">
+                                    <input type="number" class="form-control" placeholder="Enter Size" name="size">   
+                                </div>
+                            </div>                                       
+                        </div>
+                
+
+                        <div class="grid-2 group-box">
+                            <div class="group-select grid-2">
+                                <div class="box-select">
+                                    <label class="title-select fw-6">Rooms</label>
+                                    <select class="form-control" name="rooms">
+                                        <option value="">----</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div class="box-select">
+                                    <label class="title-select fw-6">Bathrooms</label>
+                                    <select class="form-control" name="bathrooms">
+                                        <option value="">----</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="group-select grid-2">
+                                <div class="box-select">
+                                    <label class="title-select fw-6">Bedrooms</label>
+                                    <select class="form-control" name="bedrooms">
+                                        <option value="">----</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                
+                            </div>                                                    
+                           
+                        </div>
+                
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+<section class="flat-section flat-recommended flat-sidebar">
+    <div class="container">
+        <div class="box-title-listing">
+            <div class="box-left">
+                <h3 class="fw-8">Property Listing</h3>
+                <p class="text">There are currently {{ properties.paginator.count }} properties.</p>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-md-8 col-lg-7 flat-animate-tab">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="gridLayout" role="tabpanel">
+                        <div class="row">
+                            {% for property in properties %}
+                            <div class="col-md-6 col-lg-4 mb-4"> <!-- Adjust columns as needed -->
+                                <div class="homelengo-box">
+                                    <div class="archive-top">
+                                        <a href="{% url 'property_detail' property_id=property.id %}" class="images-group">
+                                            <div class="images-style">
+                                                {% with property.images.first as first_image %}
+                                                    {% if first_image %}
+                                                        <img class="lazyload" data-src="{{ first_image.image.url }}" src="{{ first_image.image.url }}" alt="Property Image">                                                   
+                                                    {% endif %}
+                                                {% endwith %}                                            
+                                            </div>
+                                            <div class="top">
+                                                <ul class="d-flex gap-6">
+                                                    <li class="flag-tag primary">Featured</li>
+                                                    <li class="flag-tag style-1">For Sale</li>
+                                                </ul>    
+                                            </div>
+                                            <div class="bottom">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10 7C10 7.53043 9.78929 8.03914 9.41421 8.41421C9.03914 8.78929 8.53043 9 8 9C7.46957 9 6.96086 8.78929 6.58579 8.41421C6.21071 8.03914 6 7.53043 6 7C6 6.46957 6.21071 5.96086 6.58579 5.58579C6.96086 5.21071 7.46957 5 8 5C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M13 7C13 11.7613 8 14.5 8 14.5C8 14.5 3 11.7613 3 7C3 5.67392 3.52678 4.40215 4.46447 3.46447C5.40215 2.52678 6.67392 2 8 2C9.32608 2 10.5979 2.52678 11.5355 3.46447C12.4732 4.40215 13 5.67392 13 7Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                {{property.address}}
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="archive-bottom">
+                                        <div class="content-top">
+                                            <h6 class="text-capitalize"><a href="property-details-v1.html" class="link">{{ property.title }}</a></h6>
+                                            <p>{{ property.description|slice:":100" }}...</p>
+                                            <ul class="meta-list">
+                                                <li class="item">
+                                                    <i class="icon icon-bed"></i>
+                                                    <span class="text-variant-1">Beds:</span>
+                                                    <span class="fw-6">{{property.bedrooms}}</span>
+                                                </li>
+                                                <li class="item">
+                                                    <i class="icon icon-bath"></i>
+                                                    <span class="text-variant-1">Baths:</span>
+                                                    <span class="fw-6">{{property.bathrooms}}</span>
+                                                </li>
+        
+                                                <li class="item">
+                                                    <i class="icon icon-sqft"></i>
+                                                    <span class="text-variant-1">Sqft:</span>
+                                                    <span class="fw-6">{{property.size}}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="content-bottom">
+                                            <div class="d-flex gap-8 align-items-center">
+                                                <div class="avatar avt-40 round">
+                                                    <img src="{{property.agent.profile_picture.url}}" alt="avt">
+                                                </div>
+                                                <span>{{property.agent.first_name}} {{property.agent.last_name}}</span>
+                                            </div>
+                                            <h6 class="price">₦{{property.price}}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            {% empty %}
+                            <p>No properties found.</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Pagination -->
+        <ul class="wd-navigation mt-20">
+            {% if properties.has_previous %}
+                <li>
+                    <a href="?page={{ properties.previous_page_number }}
+                        {% for key, value in request.GET.items %}
+                            {% if key != 'page' %}&{{ key }}={{ value }}{% endif %}
+                        {% endfor %}" 
+                        class="nav-item">
+                        <i class="icon icon-arr-l"></i>
+                    </a>
+                </li>
+            {% endif %}
+    
+            {% for num in properties.paginator.page_range %}
+                {% if num == properties.number %}
+                    <li><a href="#" class="nav-item active">{{ num }}</a></li>
+                {% elif num > properties.number|add:"-3" and num < properties.number|add:"3" %}
+                    <li>
+                        <a href="?page={{ num }}
+                            {% for key, value in request.GET.items %}
+                                {% if key != 'page' %}&{{ key }}={{ value }}{% endif %}
+                            {% endfor %}" class="nav-item">
+                            {{ num }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+    
+            {% if properties.paginator.num_pages > properties.number|add:"2" %}
+                <li><a href="#" class="nav-item">...</a></li>
+            {% endif %}
+    
+            {% if properties.has_next %}
+                <li>
+                    <a href="?page={{ properties.next_page_number }}
+                        {% for key, value in request.GET.items %}
+                            {% if key != 'page' %}&{{ key }}={{ value }}{% endif %}
+                        {% endfor %}" 
+                        class="nav-item">
+                        <i class="icon icon-arr-r"></i>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    
+</section>               
+
+
+{% endblock %}

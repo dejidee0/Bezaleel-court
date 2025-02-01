@@ -40,7 +40,7 @@ DEBUG = os.getenv('DEBUG')
 
 TEMPLATES_DEBUG = True
 
-ALLOWED_HOSTS = ["bezaleelcourt.com", ".onrender.com", ".vercel.com"]
+ALLOWED_HOSTS = ["www.bezaleelcourt.com", "bezaleelcourt.com"]
 
 
 

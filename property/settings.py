@@ -40,7 +40,8 @@ DEBUG = os.getenv('DEBUG')
 
 TEMPLATES_DEBUG = True
 
-ALLOWED_HOSTS = ["bezaleelcourt.com"]
+ALLOWED_HOSTS = ["bezaleelcourt.com", ".onrender.com", ".vercel.com"]
+
 
 
 LOGIN_REDIRECT_URL = '/dashboard' 
